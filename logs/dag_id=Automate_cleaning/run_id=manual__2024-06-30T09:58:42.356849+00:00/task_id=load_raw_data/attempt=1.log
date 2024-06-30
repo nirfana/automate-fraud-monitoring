@@ -1,0 +1,23 @@
+[2024-06-30T09:58:43.867+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:58:42.356849+00:00 [queued]>
+[2024-06-30T09:58:43.881+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:58:42.356849+00:00 [queued]>
+[2024-06-30T09:58:43.882+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:58:43.883+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:58:43.883+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:58:43.900+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): load_raw_data> on 2024-06-30 09:58:42.356849+00:00
+[2024-06-30T09:58:43.906+0000] {standard_task_runner.py:52} INFO - Started process 458 to run task
+[2024-06-30T09:58:43.911+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'load_raw_data', 'manual__2024-06-30T09:58:42.356849+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmp6b0o0cu7', '--error-file', '/tmp/tmp1876ku2s']
+[2024-06-30T09:58:43.913+0000] {standard_task_runner.py:80} INFO - Job 29: Subtask load_raw_data
+[2024-06-30T09:58:44.001+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:58:42.356849+00:00 [running]> on host 80cef885917b
+[2024-06-30T09:58:44.091+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=load_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-30T09:58:42.356849+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-06-30T09:58:42.356849+00:00
+[2024-06-30T09:58:50.394+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-06-30T09:58:50.418+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=Automate_cleaning, task_id=load_raw_data, execution_date=20240630T095842, start_date=20240630T095843, end_date=20240630T095850
+[2024-06-30T09:58:50.476+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-06-30T09:58:50.521+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

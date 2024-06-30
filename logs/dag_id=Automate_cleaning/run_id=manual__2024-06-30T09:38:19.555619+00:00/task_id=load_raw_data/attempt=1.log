@@ -1,0 +1,124 @@
+[2024-06-30T09:38:21.370+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:38:19.555619+00:00 [queued]>
+[2024-06-30T09:38:21.395+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:38:19.555619+00:00 [queued]>
+[2024-06-30T09:38:21.395+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:38:21.396+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:38:21.397+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:38:21.440+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): load_raw_data> on 2024-06-30 09:38:19.555619+00:00
+[2024-06-30T09:38:21.464+0000] {standard_task_runner.py:52} INFO - Started process 205 to run task
+[2024-06-30T09:38:21.467+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'load_raw_data', 'manual__2024-06-30T09:38:19.555619+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmpokx6tj0f', '--error-file', '/tmp/tmpcxi2rlou']
+[2024-06-30T09:38:21.473+0000] {standard_task_runner.py:80} INFO - Job 2: Subtask load_raw_data
+[2024-06-30T09:38:21.657+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.load_raw_data manual__2024-06-30T09:38:19.555619+00:00 [running]> on host 3e5e5d011624
+[2024-06-30T09:38:21.840+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=load_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-30T09:38:19.555619+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-06-30T09:38:19.555619+00:00
+[2024-06-30T09:38:23.093+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DuplicateTable: relation "fraud-data-table" already exists
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/automate_clean_DAG.py", line 44, in load_to_postgres
+    df.to_sql('fraud-data-table', conn, index=False, if_exists='replace')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 2882, in to_sql
+    method=method,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 728, in to_sql
+    **engine_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1758, in to_sql
+    dtype=dtype,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1650, in prep_table
+    table.create()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 867, in create
+    self._execute_create()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 853, in _execute_create
+    self.table.create()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/schema.py", line 950, in create
+    bind._run_ddl_visitor(ddl.SchemaGenerator, self, checkfirst=checkfirst)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2113, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/visitors.py", line 524, in traverse_single
+    return meth(obj, **kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/ddl.py", line 895, in visit_table
+    include_foreign_key_constraints,  # noqa
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/ddl.py", line 78, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1387, in _execute_ddl
+    compiled,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "fraud-data-table" already exists
+
+[SQL: 
+CREATE TABLE "fraud-data-table" (
+	"Transaction ID" TEXT, 
+	"Date" TEXT, 
+	"Day of Week" TEXT, 
+	"Time" BIGINT, 
+	"Type of Card" TEXT, 
+	"Entry Mode" TEXT, 
+	"Amount" TEXT, 
+	"Type of Transaction" TEXT, 
+	"Merchant Group" TEXT, 
+	"Country of Transaction" TEXT, 
+	"Shipping Address" TEXT, 
+	"Country of Residence" TEXT, 
+	"Gender" TEXT, 
+	"Age" FLOAT(53), 
+	"Bank" TEXT, 
+	"Fraud" BIGINT
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-06-30T09:38:23.188+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Automate_cleaning, task_id=load_raw_data, execution_date=20240630T093819, start_date=20240630T093821, end_date=20240630T093823
+[2024-06-30T09:38:23.690+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 2 for task load_raw_data ((psycopg2.errors.DuplicateTable) relation "fraud-data-table" already exists
+
+[SQL: 
+CREATE TABLE "fraud-data-table" (
+	"Transaction ID" TEXT, 
+	"Date" TEXT, 
+	"Day of Week" TEXT, 
+	"Time" BIGINT, 
+	"Type of Card" TEXT, 
+	"Entry Mode" TEXT, 
+	"Amount" TEXT, 
+	"Type of Transaction" TEXT, 
+	"Merchant Group" TEXT, 
+	"Country of Transaction" TEXT, 
+	"Shipping Address" TEXT, 
+	"Country of Residence" TEXT, 
+	"Gender" TEXT, 
+	"Age" FLOAT(53), 
+	"Bank" TEXT, 
+	"Fraud" BIGINT
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/14/f405); 205)
+[2024-06-30T09:38:23.757+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-06-30T09:38:23.859+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

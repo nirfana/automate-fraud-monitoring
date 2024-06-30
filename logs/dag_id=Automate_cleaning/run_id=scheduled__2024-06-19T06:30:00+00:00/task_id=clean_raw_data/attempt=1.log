@@ -1,0 +1,46 @@
+[2024-06-30T09:35:12.939+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.clean_raw_data scheduled__2024-06-19T06:30:00+00:00 [queued]>
+[2024-06-30T09:35:12.971+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.clean_raw_data scheduled__2024-06-19T06:30:00+00:00 [queued]>
+[2024-06-30T09:35:12.972+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:35:12.974+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:35:12.975+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:35:13.004+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): clean_raw_data> on 2024-06-19 06:30:00+00:00
+[2024-06-30T09:35:13.017+0000] {standard_task_runner.py:52} INFO - Started process 280 to run task
+[2024-06-30T09:35:13.025+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'clean_raw_data', 'scheduled__2024-06-19T06:30:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmp9j62hx8o', '--error-file', '/tmp/tmp1ih0qdm0']
+[2024-06-30T09:35:13.027+0000] {standard_task_runner.py:80} INFO - Job 24: Subtask clean_raw_data
+[2024-06-30T09:35:13.153+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.clean_raw_data scheduled__2024-06-19T06:30:00+00:00 [running]> on host 7ad299a7fc17
+[2024-06-30T09:35:13.309+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=clean_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-19T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-19T06:30:00+00:00
+[2024-06-30T09:35:13.712+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/automate_clean_DAG.py", line 78, in clean_raw_data
+    df = pd.read_csv('/opt/airflow/dags/fraud_data_raw.csv')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 488, in _read
+    return parser.read(nrows)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1047, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 224, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 801, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 857, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 843, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 1917, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc2 in position 189670: invalid continuation byte
+[2024-06-30T09:35:13.729+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Automate_cleaning, task_id=clean_raw_data, execution_date=20240619T063000, start_date=20240630T093512, end_date=20240630T093513
+[2024-06-30T09:35:13.743+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 24 for task clean_raw_data ('utf-8' codec can't decode byte 0xc2 in position 189670: invalid continuation byte; 280)
+[2024-06-30T09:35:13.781+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-06-30T09:35:13.829+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

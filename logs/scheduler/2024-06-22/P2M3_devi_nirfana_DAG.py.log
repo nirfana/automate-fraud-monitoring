@@ -1,0 +1,7 @@
+[2024-06-22T17:18:41.485+0000] {processor.py:153} INFO - Started process (PID=181) to work on /opt/airflow/dags/P2M3_devi_nirfana_DAG.py
+[2024-06-22T17:18:41.489+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/P2M3_devi_nirfana_DAG.py for tasks to queue
+[2024-06-22T17:18:41.491+0000] {logging_mixin.py:115} INFO - [2024-06-22T17:18:41.490+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/P2M3_devi_nirfana_DAG.py
+[2024-06-22T17:18:42.048+0000] {processor.py:650} INFO - DAG(s) dict_keys(['Milestones3']) retrieved from /opt/airflow/dags/P2M3_devi_nirfana_DAG.py
+[2024-06-22T17:18:42.084+0000] {logging_mixin.py:115} INFO - [2024-06-22T17:18:42.084+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2024-06-22T17:18:42.122+0000] {logging_mixin.py:115} INFO - [2024-06-22T17:18:42.122+0000] {dag.py:2981} INFO - Setting next_dagrun for Milestones3 to 2024-06-22T06:30:00+00:00, run_after=2024-06-23T06:30:00+00:00
+[2024-06-22T17:18:42.141+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/P2M3_devi_nirfana_DAG.py took 0.660 seconds

@@ -1,0 +1,170 @@
+[2024-06-30T09:34:19.841+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:34:19.900+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:34:19.908+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:34:19.912+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:34:19.913+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:34:20.012+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): fetch_raw_data> on 2024-06-23 06:30:00+00:00
+[2024-06-30T09:34:20.051+0000] {standard_task_runner.py:52} INFO - Started process 264 to run task
+[2024-06-30T09:34:20.057+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'fetch_raw_data', 'scheduled__2024-06-23T06:30:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmpinaql_ng', '--error-file', '/tmp/tmpqmp90rpp']
+[2024-06-30T09:34:20.073+0000] {standard_task_runner.py:80} INFO - Job 18: Subtask fetch_raw_data
+[2024-06-30T09:34:20.581+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [running]> on host 7ad299a7fc17
+[2024-06-30T09:34:21.187+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=fetch_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-23T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-23T06:30:00+00:00
+[2024-06-30T09:34:33.651+0000] {local_task_job.py:156} INFO - Task exited with return code Negsignal.SIGKILL
+[2024-06-30T09:34:33.790+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Automate_cleaning, task_id=fetch_raw_data, execution_date=20240623T063000, start_date=20240630T093419, end_date=20240630T093433
+[2024-06-30T09:34:34.430+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T09:39:00.181+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:39:00.241+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:39:00.244+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:39:00.247+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:39:00.250+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:39:00.416+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): fetch_raw_data> on 2024-06-23 06:30:00+00:00
+[2024-06-30T09:39:00.436+0000] {standard_task_runner.py:52} INFO - Started process 260 to run task
+[2024-06-30T09:39:00.441+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'fetch_raw_data', 'scheduled__2024-06-23T06:30:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmpf4e79j4c', '--error-file', '/tmp/tmpsswe4uj_']
+[2024-06-30T09:39:00.467+0000] {standard_task_runner.py:80} INFO - Job 16: Subtask fetch_raw_data
+[2024-06-30T09:39:00.942+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [running]> on host 3e5e5d011624
+[2024-06-30T09:39:01.380+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=fetch_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-23T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-23T06:30:00+00:00
+[2024-06-30T09:39:01.404+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/automate_clean_DAG.py", line 60, in fetch_from_postgres
+    df = pd.read_sql_query('SELECT * FROM fraud-data-table', conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 443, in read_sql_query
+    dtype=dtype,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1579, in read_query
+    result = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1424, in execute
+    return self.connectable.execution_options().execute(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1279, in execute
+    future=False,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1585, in _exec_driver_sql
+    distilled_parameters,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+[SQL: SELECT * FROM fraud-data-table]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-06-30T09:39:01.563+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Automate_cleaning, task_id=fetch_raw_data, execution_date=20240623T063000, start_date=20240630T093900, end_date=20240630T093901
+[2024-06-30T09:39:01.661+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 16 for task fetch_raw_data ((psycopg2.errors.SyntaxError) syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+[SQL: SELECT * FROM fraud-data-table]
+(Background on this error at: https://sqlalche.me/e/14/f405); 260)
+[2024-06-30T09:39:01.727+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-06-30T09:39:01.889+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T09:56:44.089+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:56:44.169+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [queued]>
+[2024-06-30T09:56:44.177+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:56:44.179+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-06-30T09:56:44.181+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-06-30T09:56:44.240+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): fetch_raw_data> on 2024-06-23 06:30:00+00:00
+[2024-06-30T09:56:44.255+0000] {standard_task_runner.py:52} INFO - Started process 395 to run task
+[2024-06-30T09:56:44.260+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Automate_cleaning', 'fetch_raw_data', 'scheduled__2024-06-23T06:30:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/automate_clean_DAG.py', '--cfg-path', '/tmp/tmp3820r557', '--error-file', '/tmp/tmp0xrstmic']
+[2024-06-30T09:56:44.267+0000] {standard_task_runner.py:80} INFO - Job 22: Subtask fetch_raw_data
+[2024-06-30T09:56:44.438+0000] {task_command.py:371} INFO - Running <TaskInstance: Automate_cleaning.fetch_raw_data scheduled__2024-06-23T06:30:00+00:00 [running]> on host 80cef885917b
+[2024-06-30T09:56:44.567+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=devi_nirfana
+AIRFLOW_CTX_DAG_ID=Automate_cleaning
+AIRFLOW_CTX_TASK_ID=fetch_raw_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-06-23T06:30:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-06-23T06:30:00+00:00
+[2024-06-30T09:56:44.581+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/automate_clean_DAG.py", line 60, in fetch_from_postgres
+    df = pd.read_sql_query('SELECT * FROM fraud-data-table', conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 443, in read_sql_query
+    dtype=dtype,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1579, in read_query
+    result = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1424, in execute
+    return self.connectable.execution_options().execute(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1279, in execute
+    future=False,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1585, in _exec_driver_sql
+    distilled_parameters,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+[SQL: SELECT * FROM fraud-data-table]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-06-30T09:56:44.608+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Automate_cleaning, task_id=fetch_raw_data, execution_date=20240623T063000, start_date=20240630T095644, end_date=20240630T095644
+[2024-06-30T09:56:44.634+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 22 for task fetch_raw_data ((psycopg2.errors.SyntaxError) syntax error at or near "-"
+LINE 1: SELECT * FROM fraud-data-table
+                           ^
+
+[SQL: SELECT * FROM fraud-data-table]
+(Background on this error at: https://sqlalche.me/e/14/f405); 395)
+[2024-06-30T09:56:44.655+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-06-30T09:56:44.751+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
